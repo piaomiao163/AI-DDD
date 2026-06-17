@@ -1,0 +1,4 @@
+.my-instances { padding: 20px; }
+.card-title { font-size: 16px; font-weight: 600; }
+.pagination-wrapper { margin-top: 16px; display: flex; justify-content: flex-end; }
+.text-muted { color: #909399; }

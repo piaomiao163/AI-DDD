@@ -1,0 +1,30 @@
+{
+    "java.configuration.maven.globalSettings": "",
+    // 或者使用这个配置（效果相同）
+    "maven.settingsFile": "D:\\Program Files\\apache-maven-3.9.0\\conf\\settings.xml",
+    // 可选：指定当前项目使用的 Maven 可执行文件
+    "maven.executable.path": "D:\\Program Files\\apache-maven-3.9.0\\bin\\mvn.cmd",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "maven.terminal.useJavaHome": true,
+    "java.debug.settings.forceBuildBeforeLaunch": true,
+    // 启用 Vetur 的验证功能 (必须)
+    "vetur.validation.template": false,
+    "vetur.validation.script": false,
+    "vetur.validation.style": false,
+    
+    // 让 Vetur 使用项目本地安装的 Vue 版本 (强烈推荐)
+    "vetur.useWorkspaceDependencies": true,
+    
+    // 关联 Vue 文件的语法高亮
+    "files.associations": {
+        "*.vue": "vue"
+    },
+    
+    // 可选：设置 Vetur 的格式化工具
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+    "vetur.format.defaultFormatter.ts": "vscode-typescript",
+    "java.debug.settings.onBuildFailureProceed": true,
+    "spring-boot.ls.enabled": true,
+}

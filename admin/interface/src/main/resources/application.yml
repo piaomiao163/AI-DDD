@@ -1,0 +1,61 @@
+server:
+  port: 8086
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: interface
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-response: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/ddd?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&characterSetResults=utf8mb4&connectionCollation=utf8mb4_unicode_ci&sessionVariables=character_set_client=utf8mb4,character_set_connection=utf8mb4,character_set_results=utf8mb4&nullCatalogMeansCurrent=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:123456}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialization-mode: never
+    continue-on-error: true
+  activiti:
+    database-schema-update: true
+    history-level: audit
+    db-history-used: true
+    check-process-definitions: false
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+    timeout: ${REDIS_TIMEOUT:60000}
+    database: ${REDIS_DATABASE:0}
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+logging:
+  level:
+    com.piaomiao: ${LOG_LEVEL_PIAOMIAO:debug}
+    org.springframework: ${LOG_LEVEL_SPRING:info}
+    org.springframework.security: ${LOG_LEVEL_SECURITY:debug}
+jwt:
+  secret: ${JWT_SECRET:ai-ddd-dev-secret-change-in-production-please-use-256-bit}
+  expire-time: ${JWT_EXPIRE_TIME:86400000}
+auth:
+  register-enabled: ${AUTH_REGISTER_ENABLED:false}
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto  # 确保使用自增策略
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.piaomiao.dal.entity

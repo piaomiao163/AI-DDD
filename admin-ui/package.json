@@ -1,0 +1,33 @@
+{
+  "name": "admin-ui",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "activiti-bpmn-moddle": "^4.4.0",
+    "axios": "^1.6.8",
+    "bpmn-js": "^17.11.1",
+    "bpmn-js-properties-panel": "^5.22.0",
+    "camunda-bpmn-moddle": "^7.0.1",
+    "dayjs": "^1.11.10",
+    "element-plus": "^2.6.0",
+    "js-cookie": "^3.0.5",
+    "lodash-es": "^4.17.21",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue-jsx": "^4.2.0",
+    "sass": "^1.72.0",
+    "typescript": "^5.4.2",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.0.6"
+  }
+}

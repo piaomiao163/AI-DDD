@@ -1,0 +1,77 @@
+.process-design {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.design-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  border-bottom: 1px solid #e4e7ed;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.process-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.process-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #303133;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.design-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.bpmn-canvas {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.properties-panel-container {
+  width: 300px;
+  height: 100%;
+  overflow-y: auto;
+  background: #fff;
+  border-left: 1px solid #e4e7ed;
+}
+
+/* 隐藏 bpmn.io logo */
+.bjs-powered-by {
+  display: none !important;
+}
+
+/* 确保画布容器占满 */
+.djs-container {
+  height: 100% !important;
+}
+
+.w-200 {
+  width: 200px;
+}

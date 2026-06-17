@@ -1,0 +1,35 @@
+.operation-log-container .search-form {
+  margin-bottom: 20px;
+}
+
+.operation-log-container .table-toolbar {
+  margin-bottom: 20px;
+}
+
+.operation-log-container .el-pagination {
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.operation-log-container .json-pre {
+  background-color: #f5f7fa;
+  padding: 10px;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow: auto;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+}
+
+.operation-log-container .error-pre {
+  background-color: #fef0f0;
+  color: #f56c6c;
+  padding: 10px;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow: auto;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+}

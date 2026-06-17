@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": "-Dfile.encoding=UTF-8"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.piaomiao.App",
+            "projectName": "interface",
+            "vmArgs": "-Dfile.encoding=UTF-8",
+            "cwd": "${workspaceFolder}/admin/interface"
+        }
+    ]
+}

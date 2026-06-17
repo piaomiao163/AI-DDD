@@ -1,0 +1,19 @@
+.data-dictionary-container {
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-header {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+}

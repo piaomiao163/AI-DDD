@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaomiao.dal.mapper.MenuMapper">
+    <!-- 查询所有菜单 -->
+    <select id="selectAll" resultType="com.piaomiao.dal.entity.MenuDO">
+        SELECT * FROM sys_menu ORDER BY sort ASC
+    </select>
+    
+    <!-- 查询根菜单 -->
+    <select id="selectRootMenus" resultType="com.piaomiao.dal.entity.MenuDO">
+        SELECT * FROM sys_menu WHERE parent_id = 0 ORDER BY sort ASC
+    </select>
+    
+    <!-- 根据父菜单ID查询子菜单 -->
+    <select id="selectByParentId" parameterType="java.lang.Long" resultType="com.piaomiao.dal.entity.MenuDO">
+        SELECT * FROM sys_menu WHERE parent_id = #{parentId} ORDER BY sort ASC
+    </select>
+    
+    <!-- 根据角色ID查询菜单 -->
+    <select id="selectByRoleId" parameterType="java.lang.Long" resultType="com.piaomiao.dal.entity.MenuDO">
+        SELECT m.* FROM sys_menu m JOIN sys_role_menu rm ON m.id = rm.menu_id WHERE rm.role_id = #{roleId} ORDER BY m.sort ASC
+    </select>
+</mapper>

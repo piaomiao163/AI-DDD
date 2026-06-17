@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "activiti-bpmn-moddle": "^4.4.0",
+    "houtaroy-bpmn-js-properties-panel-activiti": "^0.0.1"
+  },
+  "dependencies": {
+    "camunda-bpmn-moddle": "^7.0.1"
+  }
+}

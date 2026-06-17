@@ -1,0 +1,20 @@
+package com.piaomiao.command;
+
+import com.piaomiao.dto.PermissionDTO;
+import com.piaomiao.dto.PermissionQueryPageDTO;
+import com.piaomiao.model.PermissionModel;
+import com.piaomiao.response.PageResult;
+
+import java.util.List;
+
+public interface PermissionCommand {
+    PermissionModel findById(Long id);
+    PermissionModel findByCode(String code);
+    List<PermissionModel> findAll();
+
+    Long save(PermissionDTO permissionDTO);
+    void update(PermissionDTO permissionDTO);
+    void delete(Long id);
+
+    PageResult<PermissionModel> findPage(PermissionQueryPageDTO dto);
+}

@@ -1,0 +1,12 @@
+.user-container .search-form {
+  margin-bottom: 20px;
+}
+
+.user-container .table-toolbar {
+  margin-bottom: 20px;
+}
+
+.user-container .el-pagination {
+  margin-top: 20px;
+  justify-content: flex-end;
+}

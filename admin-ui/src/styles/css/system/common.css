@@ -1,0 +1,20 @@
+/* System views shared utility classes */
+.filter-input {
+  width: 120px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mr-4 {
+  margin-right: 4px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}

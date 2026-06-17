@@ -1,0 +1,18 @@
+.role-container .search-form {
+  margin-bottom: 20px;
+}
+
+.role-container .table-toolbar {
+  margin-bottom: 20px;
+}
+
+.role-container .el-pagination {
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.permission-tree-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 8px;
+}

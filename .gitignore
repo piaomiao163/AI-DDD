@@ -1,0 +1,22 @@
+# Build outputs
+target/
+build/
+dist/
+admin-ui/dist/
+
+# Dependencies
+node_modules/
+admin-ui/node_modules/
+
+# Runtime logs
+logs/
+*.log
+
+# Local secrets / runtime pipes
+.env
+.env.*
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db

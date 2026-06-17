@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piaomiao.dal.mapper.OperationLogMapper">
+    <resultMap id="BaseResultMap" type="com.piaomiao.dal.entity.OperationLogDO">
+        <id column="id" property="id"/>
+        <result column="module" property="module"/>
+        <result column="type" property="type"/>
+        <result column="description" property="description"/>
+        <result column="request_method" property="requestMethod"/>
+        <result column="request_url" property="requestUrl"/>
+        <result column="request_params" property="requestParams"/>
+        <result column="response_result" property="responseResult"/>
+        <result column="user_id" property="userId"/>
+        <result column="username" property="username"/>
+        <result column="ip_address" property="ipAddress"/>
+        <result column="location" property="location"/>
+        <result column="status" property="status"/>
+        <result column="error_msg" property="errorMsg"/>
+        <result column="execution_time" property="executionTime"/>
+        <result column="operation_time" property="operationTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, module, type, description, request_method, request_url, request_params,
+        response_result, user_id, username, ip_address, location, status, error_msg,
+        execution_time, operation_time
+    </sql>
+</mapper>

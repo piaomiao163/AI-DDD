@@ -1,0 +1,75 @@
+.layout-container {
+  width: 100%;
+  height: 100vh;
+  transition: all 0.3s;
+}
+
+.layout-container .el-container {
+  height: 100%;
+}
+
+.layout-container .sidebar {
+  background-color: #304156;
+  transition: width 0.3s;
+  overflow-x: hidden;
+}
+
+.layout-container .sidebar .logo {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #263445;
+}
+
+.layout-container .sidebar .logo h2 {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+}
+
+.layout-container .sidebar .el-menu {
+  border-right: none;
+}
+
+.layout-container .header {
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.layout-container .header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.layout-container .header .header-left .collapse-btn {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.layout-container .header .header-left .collapse-btn:hover {
+  background-color: #f5f7fa;
+  border-radius: 4px;
+}
+
+.layout-container .header .header-right .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.layout-container .header .header-right .user-info .username {
+  font-size: 14px;
+}
+
+.layout-container .main-content {
+  background-color: #f0f2f5;
+  padding: 20px;
+  overflow-y: auto;
+}

@@ -1,0 +1,8 @@
+@use './variables.scss';
+@use './theme/default.scss';
+@use './theme/dark.scss';
+@use './theme/blue.scss';
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
