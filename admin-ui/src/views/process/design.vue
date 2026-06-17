@@ -42,6 +42,10 @@
       </div>
 
       <div class="header-right">
+        <el-button @click="importXml">
+          <el-icon><Upload/></el-icon>
+          导入XML
+        </el-button>
         <el-button @click="exportXml">
           <el-icon><Document/></el-icon>
           导出XML
@@ -81,7 +85,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, reactive } from 'vue'
-import { Check, ArrowLeft, Delete, Share, Document } from '@element-plus/icons-vue'
+import { Check, ArrowLeft, Delete, Share, Document, Upload } from '@element-plus/icons-vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { useRouter, useRoute } from 'vue-router'
 import * as processApi from '@/api/process'
@@ -251,6 +255,27 @@ const publishProcess = async () => {
   } finally {
     publishing.value = false
   }
+}
+// 导入BPMN XML：选择本地 .bpmn/.xml 文件并加载到设计器画布
+const importXml = () => {
+  const input = document.createElement('input')
+  input.type = 'file'
+  input.accept = '.bpmn,.xml,.bpmn20.xml,application/xml,text/xml'
+  input.onchange = async (e) => {
+    const file = (e.target as HTMLInputElement).files?.[0]
+    if (!file) return
+    try {
+      const xml = await file.text()
+      await modeler.importXML(xml)
+      const canvas = modeler.get('canvas')
+      canvas.zoom('fit-viewport', 'auto')
+      ElMessage.success('导入XML成功')
+    } catch (error) {
+      console.error('导入XML失败:', error)
+      ElMessage.error('导入XML失败，请检查文件是否为合法的 BPMN XML')
+    }
+  }
+  input.click()
 }
 // 导出BPMN XML
 const exportXml = async () => {
