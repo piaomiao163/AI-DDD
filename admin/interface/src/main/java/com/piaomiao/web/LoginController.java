@@ -1,7 +1,7 @@
 package com.piaomiao.web;
 
-import com.piaomiao.command.AuthCommand;
-import com.piaomiao.model.UserModel;
+import com.piaomiao.command.sys.AuthCommand;
+import com.piaomiao.model.sys.UserModel;
 import com.piaomiao.response.Response;
 import com.piaomiao.rest.CallbackRest;
 import com.piaomiao.rest.TemplateRest;

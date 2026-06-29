@@ -1,8 +1,8 @@
 package com.piaomiao.web;
 
-import com.piaomiao.command.DataDictionaryCommand;
-import com.piaomiao.model.DataDictionaryItem;
-import com.piaomiao.model.DataDictionary;
+import com.piaomiao.command.sys.DataDictionaryCommand;
+import com.piaomiao.model.sys.DataDictionaryItem;
+import com.piaomiao.model.sys.DataDictionary;
 import com.piaomiao.web.vo.DataDictionaryVO;
 import com.piaomiao.web.vo.DataDictionaryItemVO;
 import com.piaomiao.response.Response;

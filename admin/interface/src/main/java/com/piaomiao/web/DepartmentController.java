@@ -1,8 +1,8 @@
 package com.piaomiao.web;
 
-import com.piaomiao.command.DepartmentCommand;
-import com.piaomiao.model.DepartmentModel;
-import com.piaomiao.model.UserModel;
+import com.piaomiao.command.sys.DepartmentCommand;
+import com.piaomiao.model.sys.DepartmentModel;
+import com.piaomiao.model.sys.UserModel;
 import com.piaomiao.response.Response;
 import com.piaomiao.rest.CallbackRest;
 import com.piaomiao.rest.TemplateRest;

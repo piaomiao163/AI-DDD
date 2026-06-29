@@ -1,6 +1,6 @@
 package com.piaomiao.web.vo;
 
-import com.piaomiao.dto.DemoDTO;
+import com.piaomiao.dto.sys.DemoDTO;
 import lombok.Data;
 
 import java.io.Serializable;

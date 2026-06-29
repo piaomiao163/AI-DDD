@@ -146,8 +146,8 @@ public class MenuDO {
      * 转换为模型
      * @return 菜单模型
      */
-    public com.piaomiao.model.MenuModel toModel() {
-        com.piaomiao.model.MenuModel menuModel = new com.piaomiao.model.MenuModel();
+    public com.piaomiao.model.sys.MenuModel toModel() {
+        com.piaomiao.model.sys.MenuModel menuModel = new com.piaomiao.model.sys.MenuModel();
         menuModel.setId(id);
         menuModel.setName(name);
         menuModel.setPath(path);
@@ -166,7 +166,7 @@ public class MenuDO {
      * @param menuModel 菜单模型
      * @return 菜单实体
      */
-    public static MenuDO fromModel(com.piaomiao.model.MenuModel menuModel) {
+    public static MenuDO fromModel(com.piaomiao.model.sys.MenuModel menuModel) {
         MenuDO menuDO = new MenuDO();
         menuDO.setId(menuModel.getId());
         menuDO.setName(menuModel.getName());

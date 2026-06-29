@@ -1,8 +1,8 @@
 package com.piaomiao.web;
 
-import com.piaomiao.command.RoleCommand;
-import com.piaomiao.model.PermissionModel;
-import com.piaomiao.model.RoleModel;
+import com.piaomiao.command.sys.RoleCommand;
+import com.piaomiao.model.sys.PermissionModel;
+import com.piaomiao.model.sys.RoleModel;
 import com.piaomiao.response.Response;
 import com.piaomiao.rest.CallbackRest;
 import com.piaomiao.rest.TemplateRest;

@@ -1,11 +1,11 @@
 package com.piaomiao.web.vo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.piaomiao.dto.UserDTO;
-import com.piaomiao.model.DepartmentModel;
-import com.piaomiao.model.PermissionModel;
-import com.piaomiao.model.RoleModel;
-import com.piaomiao.model.UserModel;
+import com.piaomiao.dto.sys.UserDTO;
+import com.piaomiao.model.sys.DepartmentModel;
+import com.piaomiao.model.sys.PermissionModel;
+import com.piaomiao.model.sys.RoleModel;
+import com.piaomiao.model.sys.UserModel;
 import lombok.Data;
 
 import java.io.Serializable;

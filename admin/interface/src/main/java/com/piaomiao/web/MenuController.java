@@ -1,7 +1,7 @@
 package com.piaomiao.web;
 
-import com.piaomiao.command.MenuCommand;
-import com.piaomiao.model.MenuModel;
+import com.piaomiao.command.sys.MenuCommand;
+import com.piaomiao.model.sys.MenuModel;
 import com.piaomiao.response.Response;
 import com.piaomiao.rest.CallbackRest;
 import com.piaomiao.rest.TemplateRest;

@@ -1,7 +1,7 @@
 package com.piaomiao.web;
 
-import com.piaomiao.command.PermissionCommand;
-import com.piaomiao.model.PermissionModel;
+import com.piaomiao.command.sys.PermissionCommand;
+import com.piaomiao.model.sys.PermissionModel;
 import com.piaomiao.response.PageResult;
 import com.piaomiao.response.Response;
 import com.piaomiao.rest.CallbackRest;

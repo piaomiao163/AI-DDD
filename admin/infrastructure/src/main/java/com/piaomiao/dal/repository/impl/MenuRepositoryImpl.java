@@ -2,9 +2,9 @@ package com.piaomiao.dal.repository.impl;
 
 import com.piaomiao.dal.entity.MenuDO;
 import com.piaomiao.dal.mapper.MenuMapper;
-import com.piaomiao.model.MenuModel;
+import com.piaomiao.model.sys.MenuModel;
 import com.piaomiao.dal.util.AuditFieldUtil;
-import com.piaomiao.repository.MenuRepository;
+import com.piaomiao.repository.sys.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

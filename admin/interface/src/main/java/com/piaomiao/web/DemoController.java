@@ -1,8 +1,8 @@
 package com.piaomiao.web;
 
 
-import com.piaomiao.command.DemoCommand;
-import com.piaomiao.dto.DemoDTO;
+import com.piaomiao.command.sys.DemoCommand;
+import com.piaomiao.dto.sys.DemoDTO;
 import com.piaomiao.response.Response;
 import com.piaomiao.rest.CallbackRest;
 import com.piaomiao.rest.TemplateRest;

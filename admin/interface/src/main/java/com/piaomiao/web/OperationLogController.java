@@ -1,11 +1,11 @@
 package com.piaomiao.web;
 
-import com.piaomiao.command.OperationLogCommand;
-import com.piaomiao.model.OperationLogModel;
+import com.piaomiao.command.sys.OperationLogCommand;
+import com.piaomiao.model.sys.OperationLogModel;
 import com.piaomiao.response.Response;
 import com.piaomiao.rest.CallbackRest;
 import com.piaomiao.rest.TemplateRest;
-import com.piaomiao.service.OperationLogService;
+import com.piaomiao.service.sys.OperationLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

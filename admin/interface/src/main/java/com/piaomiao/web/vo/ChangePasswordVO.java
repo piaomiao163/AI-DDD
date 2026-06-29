@@ -1,6 +1,6 @@
 package com.piaomiao.web.vo;
 
-import com.piaomiao.dto.ChangePasswordDTO;
+import com.piaomiao.dto.sys.ChangePasswordDTO;
 import lombok.Data;
 
 @Data

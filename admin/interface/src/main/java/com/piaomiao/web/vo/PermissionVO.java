@@ -1,6 +1,6 @@
 package com.piaomiao.web.vo;
 
-import com.piaomiao.dto.PermissionDTO;
+import com.piaomiao.dto.sys.PermissionDTO;
 import lombok.Data;
 
 import java.io.Serializable;

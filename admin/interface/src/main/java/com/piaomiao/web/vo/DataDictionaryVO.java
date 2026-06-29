@@ -1,6 +1,6 @@
 package com.piaomiao.web.vo;
 
-import com.piaomiao.model.DataDictionary;
+import com.piaomiao.model.sys.DataDictionary;
 import lombok.Data;
 import java.time.LocalDateTime;
 
@@ -47,8 +47,8 @@ public class DataDictionaryVO {
     /**
      * 转换为DTO
      */
-    public static com.piaomiao.dto.DataDictionaryDTO toDTO(DataDictionaryVO vo) {
-        com.piaomiao.dto.DataDictionaryDTO dto = new com.piaomiao.dto.DataDictionaryDTO();
+    public static com.piaomiao.dto.sys.DataDictionaryDTO toDTO(DataDictionaryVO vo) {
+        com.piaomiao.dto.sys.DataDictionaryDTO dto = new com.piaomiao.dto.sys.DataDictionaryDTO();
         dto.setId(vo.getId());
         dto.setName(vo.getName());
         dto.setCode(vo.getCode());

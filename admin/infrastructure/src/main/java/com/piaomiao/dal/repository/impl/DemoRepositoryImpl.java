@@ -3,8 +3,8 @@ package com.piaomiao.dal.repository.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.piaomiao.dal.entity.DemoDO;
 import com.piaomiao.dal.mapper.DemoMapper;
-import com.piaomiao.model.DemoModel;
-import com.piaomiao.repository.DemoRepository;
+import com.piaomiao.model.sys.DemoModel;
+import com.piaomiao.repository.sys.DemoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
 package com.piaomiao.web;
 
-import com.piaomiao.command.PostCommand;
-import com.piaomiao.model.PostModel;
+import com.piaomiao.command.sys.PostCommand;
+import com.piaomiao.model.sys.PostModel;
 import com.piaomiao.response.Response;
 import com.piaomiao.rest.CallbackRest;
 import com.piaomiao.rest.TemplateRest;

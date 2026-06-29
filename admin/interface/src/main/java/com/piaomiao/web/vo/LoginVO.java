@@ -1,6 +1,6 @@
 package com.piaomiao.web.vo;
 
-import com.piaomiao.dto.LoginDTO;
+import com.piaomiao.dto.sys.LoginDTO;
 import lombok.Data;
 
 @Data

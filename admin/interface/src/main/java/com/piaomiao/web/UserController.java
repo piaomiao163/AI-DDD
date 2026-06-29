@@ -1,7 +1,7 @@
 package com.piaomiao.web;
 
-import com.piaomiao.command.UserCommand;
-import com.piaomiao.model.UserModel;
+import com.piaomiao.command.sys.UserCommand;
+import com.piaomiao.model.sys.UserModel;
 import com.piaomiao.response.PageResult;
 import com.piaomiao.response.Response;
 import com.piaomiao.rest.CallbackRest;
@@ -234,8 +234,8 @@ public class UserController {
      */
     @GetMapping("/{userId}/roles")
     @PreAuthorize("hasAuthority('system:user:view')")
-    public Response<List<com.piaomiao.model.RoleModel>> getUserRoles(@PathVariable Long userId) {
-        return templateRest.request(new CallbackRest<List<com.piaomiao.model.RoleModel>>() {
+    public Response<List<com.piaomiao.model.sys.RoleModel>> getUserRoles(@PathVariable Long userId) {
+        return templateRest.request(new CallbackRest<List<com.piaomiao.model.sys.RoleModel>>() {
             @Override
             public void check() {
                 if (userId == null) {
@@ -244,7 +244,7 @@ public class UserController {
             }
 
             @Override
-            public List<com.piaomiao.model.RoleModel> execute() {
+            public List<com.piaomiao.model.sys.RoleModel> execute() {
                 return userCommand.getUserRoles(userId);
             }
         });

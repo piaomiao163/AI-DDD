@@ -2,10 +2,10 @@ package com.piaomiao.web.aspect;
 
 import com.piaomiao.annotation.DataPermission;
 import com.piaomiao.enums.DataPermissionType;
-import com.piaomiao.model.UserModel;
+import com.piaomiao.model.sys.UserModel;
 import com.piaomiao.permission.DataPermissionHandler;
 import com.piaomiao.permission.DataPermissionScope;
-import com.piaomiao.service.UserService;
+import com.piaomiao.service.sys.UserService;
 import com.piaomiao.web.interceptor.DataPermissionContext;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

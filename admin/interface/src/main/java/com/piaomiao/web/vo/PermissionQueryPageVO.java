@@ -1,7 +1,7 @@
 package com.piaomiao.web.vo;
 
 import com.piaomiao.base.BasePageVO;
-import com.piaomiao.dto.PermissionQueryPageDTO;
+import com.piaomiao.dto.sys.PermissionQueryPageDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

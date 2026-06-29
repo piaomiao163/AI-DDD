@@ -3,9 +3,9 @@ package com.piaomiao.dal.repository.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.piaomiao.dal.entity.PostDO;
 import com.piaomiao.dal.mapper.PostMapper;
-import com.piaomiao.model.PostModel;
+import com.piaomiao.model.sys.PostModel;
 import com.piaomiao.dal.util.AuditFieldUtil;
-import com.piaomiao.repository.PostRepository;
+import com.piaomiao.repository.sys.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

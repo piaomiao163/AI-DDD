@@ -5,10 +5,10 @@ import com.piaomiao.dal.entity.DepartmentDO;
 import com.piaomiao.dal.entity.UserDO;
 import com.piaomiao.dal.mapper.DepartmentMapper;
 import com.piaomiao.dal.mapper.UserMapper;
-import com.piaomiao.model.DepartmentModel;
-import com.piaomiao.model.UserModel;
+import com.piaomiao.model.sys.DepartmentModel;
+import com.piaomiao.model.sys.UserModel;
 import com.piaomiao.dal.util.AuditFieldUtil;
-import com.piaomiao.repository.DepartmentRepository;
+import com.piaomiao.repository.sys.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

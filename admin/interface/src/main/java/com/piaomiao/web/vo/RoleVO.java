@@ -1,6 +1,6 @@
 package com.piaomiao.web.vo;
 
-import com.piaomiao.dto.RoleDTO;
+import com.piaomiao.dto.sys.RoleDTO;
 import lombok.Data;
 
 import java.io.Serializable;

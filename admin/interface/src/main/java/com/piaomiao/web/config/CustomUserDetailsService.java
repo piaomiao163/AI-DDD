@@ -1,11 +1,11 @@
 package com.piaomiao.web.config;
 
-import com.piaomiao.model.PermissionModel;
-import com.piaomiao.model.RoleModel;
-import com.piaomiao.model.UserModel;
-import com.piaomiao.service.PermissionService;
-import com.piaomiao.service.RoleService;
-import com.piaomiao.service.UserService;
+import com.piaomiao.model.sys.PermissionModel;
+import com.piaomiao.model.sys.RoleModel;
+import com.piaomiao.model.sys.UserModel;
+import com.piaomiao.service.sys.PermissionService;
+import com.piaomiao.service.sys.RoleService;
+import com.piaomiao.service.sys.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
