@@ -146,8 +146,8 @@ public class PermissionDO {
      * 转换为模型
      * @return 权限模型
      */
-    public com.piaomiao.model.PermissionModel toModel() {
-        com.piaomiao.model.PermissionModel permissionModel = new com.piaomiao.model.PermissionModel();
+    public com.piaomiao.model.sys.PermissionModel toModel() {
+        com.piaomiao.model.sys.PermissionModel permissionModel = new com.piaomiao.model.sys.PermissionModel();
         permissionModel.setId(id);
         permissionModel.setName(name);
         permissionModel.setCode(code);
@@ -166,7 +166,7 @@ public class PermissionDO {
      * @param permissionModel 权限模型
      * @return 权限实体
      */
-    public static PermissionDO fromModel(com.piaomiao.model.PermissionModel permissionModel) {
+    public static PermissionDO fromModel(com.piaomiao.model.sys.PermissionModel permissionModel) {
         PermissionDO permissionDO = new PermissionDO();
         permissionDO.setId(permissionModel.getId());
         permissionDO.setName(permissionModel.getName());

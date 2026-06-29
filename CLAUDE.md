@@ -2,7 +2,7 @@
 
 ## AI 角色
 
-**资深全栈开发工程师** — 精通本项目所有技术栈：Spring Boot、MyBatis-Plus、Spring Security、Activiti 7.1.0、JWT、Redis、DDD架构、Vue3、TypeScript、Element Plus、bpmn-js、JAVA23种设计模式。在编码时遵循项目既有模式和规范，输出生产级代码。
+**业务专家+资深全栈开发工程师** — 精通本项目所有技术栈：Spring Boot、MyBatis-Plus、Spring Security、Activiti 7.1.0、JWT、Redis、DDD架构、Vue3、TypeScript、Element Plus、bpmn-js、JAVA23种设计模式。在编码时遵循项目既有模式和规范，输出生产级代码。
 
 ## 项目概述
 
@@ -894,3 +894,149 @@ const detail = ref<LeaveApprovalDetail | null>(null)  // 审批详情
   - 业务表：`biz_` 前缀，如 `COMMENT='请假单表'`
   - Activiti引擎表：`ACT-` 前缀，如 `COMMENT='ACT-运行时任务（当前待办的用户任务）'`
 - **字段COMMENT**：必须写中文，包含业务含义和枚举值说明（如 `COMMENT '状态 0运行中 1已完成 2已终止 3已撤回'`）
+
+## Bug 修复工作流 (Bug Fixing Workflow)
+
+当用户报告 Bug 或请求修复问题时，必须遵循以下标准化流程。此流程旨在确保修复的准确性、质量和可追溯性。
+
+### 步骤 1：理解与复现 (Understand & Reproduce)
+
+1.  **信息收集**：
+    - 仔细阅读 Bug 描述，获取错误日志（堆栈信息）、用户操作步骤、影响范围（功能/页面）。
+    - 确认 Bug 发生的环境（本地开发、测试环境、预发布或生产）。
+2.  **尝试复现**：
+    - 根据提供的步骤，在本地或 Devin 沙盒环境中尝试复现。
+    - 如果依赖特定数据或配置，使用 `grep` 或 `read` 工具在代码库中搜索相关逻辑，理解其上下文。
+    - **如果无法立即复现**：使用 Playwright MCP 访问相关页面或 API，捕获网络请求、控制台错误和页面截图，作为分析依据。
+3.  **记录复现结果**：
+    - 在开始修复前，**务必保存错误状态的截图、日志或关键网络请求**，作为修复前后的对比证据。
+
+### 步骤 2：定位根因 (Root Cause Analysis)
+
+1.  **分析错误日志**：
+    - 从堆栈信息中识别关键的类名、方法名和行号。
+    - 使用 `grep` 搜索相关代码片段，理解调用链路。
+2.  **追踪代码流**：
+    - 遵循项目 DDD 分层约定进行追踪：
+        - **Controller → Command → Service → Repository → Model** (按需)
+        - 对于流程相关错误，检查 Activiti 的 `RepositoryService` / `RuntimeService` 调用逻辑。
+    - **常见问题检查清单**：
+        - [ ] **空指针 (NPE)**：检查对象在何处初始化，方法调用前是否进行判空。
+        - [ ] **SQL 异常**：检查 `infrastructure/dal/mapper/*.xml` 中的 SQL 语法、参数映射，以及对应的数据库表结构。
+        - [ ] **Activiti 流程错误**：检查流程定义 XML 是否正确部署，任务/变量操作是否符合流程定义。
+        - [ ] **前端错误**：检查 `admin-ui/src/api/` 接口调用和 `admin-ui/src/views/` 中的 UI 逻辑。
+3.  **输出根因结论**：
+    - 用一句话总结 Bug 的根本原因。
+    - 示例：`根因：GxptTaskMapper.getTaskById 在 taskId 为 null 时未做判空处理。`
+
+### 步骤 3：制定修复方案 (Plan the Fix)
+
+在编写任何代码前，制定修复方案：
+
+1.  **评估影响范围**：
+    - 确定需要修改的层级（如仅 `domain/model`、`infrastructure` 或 `interface/web`）。
+    - 评估修改是否会影响其他模块或流程。
+2.  **选择修复策略**（优先级从高到低）：
+    - **方案 A (最小改动)**：只修改有问题的代码行或方法，不重构整个模块。**这是首选方案。**
+    - **方案 B (防御性编程)**：增加参数校验、空值判断或异常捕获。
+    - **方案 C (局部重构)**：当代码质量极差、改动范围可控且方案 A/B 不可行时采用。
+3.  **输出方案描述**：
+    - 用简短的文字说明修复思路，例如：`修复方案：在 GxptTaskService.getTaskById 方法入口增加 Objects.requireNonNullElse(taskId, defaultId) 判空处理。`
+
+### 步骤 4：执行修复与自测 (Execute & Self-Test)
+
+1.  **编写修复代码**：
+    - 严格遵循本项目编码规范（规则 1-13）。
+    - 确保代码风格与项目保持一致（如命名、缩进、注释语言）。
+    - **重要**：如果 `CLAUDE.md` 或 `RULES.md` 有语言要求，必须遵循（如用中文编写注释）。
+2.  **添加或更新测试**：
+    - **单元测试**：如果项目相关模块已有单元测试，**必须**为修复场景补充或更新测试用例，确保 Bug 不再复现。
+    - 运行 `mvn test` (或 `./gradlew test`) 验证所有测试通过。
+3.  **手动验证**：
+    - 使用 Playwright MCP 或其他方式重新执行复现步骤，验证 Bug 已修复。
+    - 截取修复成功后的页面截图或接口返回结果。
+4.  **结果记录**：
+
+---
+
+### ⛔ 规则14: 任务前置工作流 (Task Pre-work Workflow)
+
+**每次接到新任务，必须先完成以下步骤再动手写代码。**
+
+#### 步骤
+
+1. **理解范围**：阅读需求，识别涉及的 DDD 层级（Controller → Command → Service → Repository → Model）。
+2. **探索代码**：用 `grep` / `read` 工具阅读相关文件，找到所有需要改动的点。
+3. **输出计划文档**：在 `docs/plan/` 目录下创建 `[任务名]-plan.md`，包含：
+   - 一句话任务摘要
+   - 影响的文件清单
+   - 分步实施计划（每步一行）
+   - 风险与注意事项
+4. **执行计划**：严格按计划文档执行，每完成一步在 todo_list 中标记为 done。
+
+#### 文档命名规范
+
+```
+docs/plan/[模块]-[操作]-plan.md
+# 示例：
+docs/plan/bid-project-refactor-plan.md
+docs/plan/leave-controller-add-vo-plan.md
+docs/plan/test-plan.md
+```
+
+#### 禁止行为
+
+- **禁止跳过计划直接写代码**（除非是单行 typo 修复）
+- **禁止计划文档写完不更新**（任务完成后须在文档末尾补充「完成状态」）
+
+---
+
+### ⛔ 规则15: 测试规范 (Testing Standards)
+
+**新增或修改的每个领域类都必须有对应的测试。**
+
+#### 测试层级要求
+
+| 测试类型 | 位置 | 工具 | 覆盖要求 |
+|---------|------|------|---------|
+| **Model 单元测试** | `domain/src/test/` | JUnit 5 | 所有领域行为方法、合法与非法状态跳转 |
+| **Service 单元测试** | `domain/src/test/` | JUnit 5 + Mockito | Mock Repository，验证业务编排逻辑 |
+| **Command 单元测试** | `application/src/test/` | JUnit 5 + Mockito | Mock Service，验证 DTO↔Model 转换 |
+| **Controller 单元测试** | `interface/src/test/` | JUnit 5 + Mockito | Mock TemplateRest，验证路由委托正确 |
+| **E2E 测试** | `admin-ui/e2e/` | Playwright | 核心用户流程（登录、CRUD、状态流转） |
+
+#### 命名规范
+
+```java
+// 测试方法名：[被测方法]_[前置条件]_[预期结果]
+void submit_草稿状态_应变为待审核()
+void submit_非草稿状态_应抛IllegalStateException()
+void findById_不存在ID_返回null()
+```
+
+#### 运行命令
+
+```bash
+# 后端单元测试（JDK 8）
+$env:JAVA_HOME="D:\Program Files\Java\jdk1.8.0_144"
+mvn test -pl domain,application,interface -Dtest="BidProject*,Leave*"
+
+# 前端 E2E（需先启动前后端服务）
+cd admin-ui
+npx playwright test
+
+# 前端 E2E 带 UI 模式（调试用）
+npx playwright test --ui
+```
+
+#### 测试覆盖率要求
+
+- **领域模型（Model）**：行为方法覆盖率 ≥ 90%
+- **服务层（Service/Command）**：核心方法覆盖率 ≥ 80%
+- **Controller**：所有 endpoint 至少有一个正常路径测试
+
+#### 不得删除测试
+
+- 禁止删除或降低已通过的测试用例
+- 如需修改业务逻辑，必须同步更新受影响的测试
+    - 对比修复前后的截图/日志，确认差异。

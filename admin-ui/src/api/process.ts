@@ -29,12 +29,13 @@ export interface ProcessPageResponse {
   total: number;
 }
 
-// 保存流程定义
+// 保存流程定义（XML 可能较大，放宽超时时间）
 export function saveProcess(process: ProcessDefinition) {
   return request({
     url: '/process/save',
     method: 'post',
-    data: process
+    data: process,
+    timeout: 60000
   });
 }
 
@@ -71,12 +72,13 @@ export function getProcessesByPage(data: ProcessPageRequest) {
   });
 }
 
-// 更新流程定义
+// 更新流程定义（XML 可能较大，放宽超时时间）
 export function updateProcess(process: ProcessDefinition) {
   return request({
     url: '/process/update',
     method: 'put',
-    data: process
+    data: process,
+    timeout: 60000
   });
 }
 
@@ -88,11 +90,12 @@ export function deleteProcess(id: number) {
   });
 }
 
-// 发布流程定义
+// 发布流程定义（需部署到 Activiti 引擎，放宽超时时间）
 export function publishProcess(id: number) {
   return request({
     url: `/process/publish/${id}`,
-    method: 'post'
+    method: 'post',
+    timeout: 60000
   });
 }
 

@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `sys_process_definition` (
   `name` varchar(255) NOT NULL COMMENT '流程名称',
   `process_key` varchar(255) NOT NULL COMMENT '流程标识',
   `description` text COMMENT '流程描述',
-  `xml` text COMMENT '流程XML',
+  `xml` longtext COMMENT '流程XML',
   `version` int(11) DEFAULT '1' COMMENT '版本',
   `status` int(11) DEFAULT '0' COMMENT '状态 0草稿 1已发布',
   `category` varchar(255) DEFAULT NULL COMMENT '分类',

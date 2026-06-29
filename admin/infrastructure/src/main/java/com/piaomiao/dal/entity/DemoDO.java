@@ -3,7 +3,7 @@ package com.piaomiao.dal.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.piaomiao.model.DemoModel;
+import com.piaomiao.model.sys.DemoModel;
 
 @TableName("demo")
 public class DemoDO {

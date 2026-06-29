@@ -79,6 +79,8 @@ import '@/styles/css/components/leaveApprovalDrawer.css'
 const props = defineProps<{
   visible: boolean
   taskId: string
+  /** 打开时预设的操作意图：'approve' | 'reject' | 'view'，默认 'view' */
+  action?: 'approve' | 'reject' | 'view'
 }>()
 
 const emit = defineEmits<{
@@ -115,6 +117,13 @@ watch(() => props.visible, (newVal) => {
     detail.value = null
     approveComment.value = ''
     rejectReason.value = ''
+    rejectDialogVisible.value = false
+  }
+})
+
+watch(() => props.action, (newAction) => {
+  if (props.visible && newAction === 'reject' && detail.value) {
+    rejectDialogVisible.value = true
   }
 })
 
@@ -125,6 +134,10 @@ const loadDetail = async (taskId: string) => {
     detail.value = res.data || res
     if (detail.value?.processInstanceId) {
       loadDiagram(detail.value.processInstanceId)
+    }
+    // 根据 action 预设操作意图
+    if (props.action === 'reject' && detail.value?.taskId) {
+      rejectDialogVisible.value = true
     }
   } catch (e: any) {
     ElMessage.error('加载请假详情失败')

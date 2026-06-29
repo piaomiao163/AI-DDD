@@ -1,0 +1,26 @@
+{
+  "changelists": [
+    {
+      "name": "Default",
+      "files": [
+        "admin/application/src/main/java/com/piaomiao/command/impl/ApprovalTaskCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/AuthCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/DataDictionaryCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/DemoCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/DepartmentCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/LeaveCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/MenuCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/OperationLogCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/PermissionCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/PostCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/ProcessDefinitionCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/ProcessInstanceCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/RoleCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/TaskCommandImpl.java",
+        "admin/application/src/main/java/com/piaomiao/command/impl/UserCommandImpl.java",
+        ".vscode/changelists.json"
+      ]
+    }
+  ],
+  "active": "Default"
+}

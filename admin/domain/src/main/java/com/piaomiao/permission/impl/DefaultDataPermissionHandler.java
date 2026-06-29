@@ -1,11 +1,11 @@
 package com.piaomiao.permission.impl;
 
 import com.piaomiao.enums.DataPermissionType;
-import com.piaomiao.model.UserModel;
+import com.piaomiao.model.sys.UserModel;
 import com.piaomiao.permission.DataPermissionHandler;
 import com.piaomiao.permission.DataPermissionScope;
-import com.piaomiao.service.DepartmentService;
-import com.piaomiao.service.UserService;
+import com.piaomiao.service.sys.DepartmentService;
+import com.piaomiao.service.sys.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,7 +34,7 @@ public class DefaultDataPermissionHandler implements DataPermissionHandler {
         // 首先检查用户是否有admin角色，如果有，直接赋予全部数据权限
         UserModel user = userService.findById(userId);
         if (user != null && user.getRoles() != null) {
-            for (com.piaomiao.model.RoleModel role : user.getRoles()) {
+            for (com.piaomiao.model.sys.RoleModel role : user.getRoles()) {
                 if ("admin".equals(role.getCode())) {
                     scope.setAllData(true);
                     return scope;

@@ -172,8 +172,8 @@ public class DepartmentDO {
      * 转换为模型
      * @return 部门模型
      */
-    public com.piaomiao.model.DepartmentModel toModel() {
-        com.piaomiao.model.DepartmentModel model = new com.piaomiao.model.DepartmentModel();
+    public com.piaomiao.model.sys.DepartmentModel toModel() {
+        com.piaomiao.model.sys.DepartmentModel model = new com.piaomiao.model.sys.DepartmentModel();
         model.setId(id);
         model.setName(name);
         model.setCode(code);
@@ -194,7 +194,7 @@ public class DepartmentDO {
      * @param model 部门模型
      * @return 部门数据访问对象
      */
-    public static DepartmentDO fromModel(com.piaomiao.model.DepartmentModel model) {
+    public static DepartmentDO fromModel(com.piaomiao.model.sys.DepartmentModel model) {
         DepartmentDO DO = new DepartmentDO();
         DO.setId(model.getId());
         DO.setName(model.getName());

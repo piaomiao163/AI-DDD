@@ -146,8 +146,8 @@ public class RoleDO {
      * 转换为模型
      * @return 角色模型
      */
-    public com.piaomiao.model.RoleModel toModel() {
-        com.piaomiao.model.RoleModel roleModel = new com.piaomiao.model.RoleModel();
+    public com.piaomiao.model.sys.RoleModel toModel() {
+        com.piaomiao.model.sys.RoleModel roleModel = new com.piaomiao.model.sys.RoleModel();
         roleModel.setId(id);
         roleModel.setName(name);
         roleModel.setCode(code);
@@ -168,7 +168,7 @@ public class RoleDO {
      * @param roleModel 角色模型
      * @return 角色实体
      */
-    public static RoleDO fromModel(com.piaomiao.model.RoleModel roleModel) {
+    public static RoleDO fromModel(com.piaomiao.model.sys.RoleModel roleModel) {
         RoleDO roleDO = new RoleDO();
         roleDO.setId(roleModel.getId());
         roleDO.setName(roleModel.getName());

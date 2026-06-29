@@ -130,6 +130,85 @@ const routes: RouteRecordRaw[] = [
         name: 'LeaveManage',
         component: () => import('@/views/leave/index.vue'),
         meta: { title: '请假管理', icon: 'DataBoard', keepAlive: true, permission: 'leave:manage' }
+      },
+      // 招投标管理
+      {
+        path: 'bid/project',
+        name: 'BidProject',
+        component: () => import('@/views/bid/project/index.vue'),
+        meta: { title: '项目管理', icon: 'Document', keepAlive: true, permission: 'bid:project:list' }
+      },
+      {
+        path: 'bid/project/form',
+        name: 'BidProjectForm',
+        component: () => import('@/views/bid/project/form.vue'),
+        meta: { title: '新建项目', icon: 'Document', keepAlive: false, permission: 'bid:project:add' }
+      },
+      {
+        path: 'bid/project/form/:id',
+        name: 'BidProjectEdit',
+        component: () => import('@/views/bid/project/form.vue'),
+        meta: { title: '编辑项目', icon: 'Document', keepAlive: false, permission: 'bid:project:edit' }
+      },
+      {
+        path: 'bid/project/detail/:id',
+        name: 'BidProjectDetail',
+        component: () => import('@/views/bid/project/detail.vue'),
+        meta: { title: '项目详情', icon: 'Document', keepAlive: false, permission: 'bid:project:view' }
+      },
+      {
+        path: 'bid/hall',
+        name: 'BidHall',
+        component: () => import('@/views/bid/hall/index.vue'),
+        meta: { title: '招标大厅', icon: 'Shop', keepAlive: true, permission: 'bid:hall:view' }
+      },
+      {
+        path: 'bid/hall/apply/:projectId',
+        name: 'BidApply',
+        component: () => import('@/views/bid/hall/apply.vue'),
+        meta: { title: '报名', icon: 'Shop', keepAlive: false, permission: 'bid:registration:add' }
+      },
+      {
+        path: 'bid/tender',
+        name: 'BidTender',
+        component: () => import('@/views/bid/tender/index.vue'),
+        meta: { title: '我的投标', icon: 'Tickets', keepAlive: true, permission: 'bid:tender:list' }
+      },
+      {
+        path: 'bid/tender/form/:projectId',
+        name: 'BidTenderForm',
+        component: () => import('@/views/bid/tender/form.vue'),
+        meta: { title: '投标文件', icon: 'Tickets', keepAlive: false, permission: 'bid:tender:edit' }
+      },
+      {
+        path: 'bid/expert',
+        name: 'BidExpert',
+        component: () => import('@/views/bid/expert/index.vue'),
+        meta: { title: '专家库', icon: 'User', keepAlive: true, permission: 'bid:expert:list' }
+      },
+      {
+        path: 'bid/evaluation',
+        name: 'BidEvaluation',
+        component: () => import('@/views/bid/evaluation/index.vue'),
+        meta: { title: '评标任务', icon: 'Star', keepAlive: true, permission: 'bid:evaluation:list' }
+      },
+      {
+        path: 'bid/evaluation/score/:projectId',
+        name: 'BidScore',
+        component: () => import('@/views/bid/evaluation/score.vue'),
+        meta: { title: '评分', icon: 'Star', keepAlive: false, permission: 'bid:evaluation:score' }
+      },
+      {
+        path: 'bid/complaint',
+        name: 'BidComplaint',
+        component: () => import('@/views/bid/complaint/index.vue'),
+        meta: { title: '质疑投诉', icon: 'Warning', keepAlive: true, permission: 'bid:complaint:list' }
+      },
+      {
+        path: 'bid/contract',
+        name: 'BidContract',
+        component: () => import('@/views/bid/contract/index.vue'),
+        meta: { title: '合同管理', icon: 'Document', keepAlive: true, permission: 'bid:contract:list' }
       }
     ]
   },

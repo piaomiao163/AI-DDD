@@ -2,7 +2,7 @@ package com.piaomiao.dal.entity;
 
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.piaomiao.model.DataDictionary;
+import com.piaomiao.model.sys.DataDictionary;
 
 import java.time.LocalDateTime;
 

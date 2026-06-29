@@ -185,8 +185,8 @@ public class UserDO {
      * 转换为模型
      * @return 用户模型
      */
-    public com.piaomiao.model.UserModel toModel() {
-        com.piaomiao.model.UserModel userModel = new com.piaomiao.model.UserModel();
+    public com.piaomiao.model.sys.UserModel toModel() {
+        com.piaomiao.model.sys.UserModel userModel = new com.piaomiao.model.sys.UserModel();
         userModel.setId(id);
         userModel.setUsername(username);
         userModel.setPassword(password);
@@ -208,7 +208,7 @@ public class UserDO {
      * @param userModel 用户模型
      * @return 用户实体
      */
-    public static UserDO fromModel(com.piaomiao.model.UserModel userModel) {
+    public static UserDO fromModel(com.piaomiao.model.sys.UserModel userModel) {
         UserDO userDO = new UserDO();
         userDO.setId(userModel.getId());
         userDO.setUsername(userModel.getUsername());
