@@ -23,9 +23,9 @@
         <el-table-column prop="leaveCreateTime" label="提交时间" width="170" />
         <el-table-column label="操作" width="200" align="center" fixed="right">
           <template #default="scope">
-            <el-button type="success" size="small" @click="openDrawer(scope.row)">审批</el-button>
-            <el-button type="danger" size="small" @click="openDrawer(scope.row)">驳回</el-button>
-            <el-button size="small" @click="openDrawer(scope.row)">详情</el-button>
+            <el-button type="success" size="small" @click="openDrawer(scope.row, 'approve')">审批</el-button>
+            <el-button type="danger" size="small" @click="openDrawer(scope.row, 'reject')">驳回</el-button>
+            <el-button size="small" @click="openDrawer(scope.row, 'view')">详情</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -46,6 +46,7 @@
     <LeaveApprovalDrawer
       v-model:visible="drawerVisible"
       :task-id="currentTaskId"
+      :action="currentAction"
       @approved="onActionCompleted"
       @rejected="onActionCompleted"
     />
@@ -64,6 +65,7 @@ const loading = ref(false)
 const pagination = reactive({ pageNum: 1, pageSize: 10 })
 const drawerVisible = ref(false)
 const currentTaskId = ref('')
+const currentAction = ref<'approve' | 'reject' | 'view'>('view')
 
 onMounted(() => { fetchData() })
 
@@ -85,8 +87,9 @@ const handleSizeChange = () => {
   fetchData()
 }
 
-const openDrawer = (row: LeaveApprovalItem) => {
+const openDrawer = (row: LeaveApprovalItem, action: 'approve' | 'reject' | 'view') => {
   currentTaskId.value = row.taskId
+  currentAction.value = action
   drawerVisible.value = true
 }
 

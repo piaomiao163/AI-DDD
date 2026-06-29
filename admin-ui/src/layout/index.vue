@@ -85,6 +85,41 @@
               <template #title>请假管理</template>
             </el-menu-item>
           </el-sub-menu>
+
+          <el-sub-menu index="/bid">
+            <template #title>
+              <el-icon><Briefcase /></el-icon>
+              <span>招投标管理</span>
+            </template>
+            <el-menu-item index="/bid/project" v-if="permissionStore.hasPermission('bid:project:list')">
+              <el-icon><Document /></el-icon>
+              <template #title>项目管理</template>
+            </el-menu-item>
+            <el-menu-item index="/bid/hall" v-if="permissionStore.hasPermission('bid:hall:view')">
+              <el-icon><Shop /></el-icon>
+              <template #title>招标大厅</template>
+            </el-menu-item>
+            <el-menu-item index="/bid/tender" v-if="permissionStore.hasPermission('bid:tender:list')">
+              <el-icon><Tickets /></el-icon>
+              <template #title>我的投标</template>
+            </el-menu-item>
+            <el-menu-item index="/bid/expert" v-if="permissionStore.hasPermission('bid:expert:list')">
+              <el-icon><User /></el-icon>
+              <template #title>专家库</template>
+            </el-menu-item>
+            <el-menu-item index="/bid/evaluation" v-if="permissionStore.hasPermission('bid:evaluation:list')">
+              <el-icon><Star /></el-icon>
+              <template #title>评标任务</template>
+            </el-menu-item>
+            <el-menu-item index="/bid/complaint" v-if="permissionStore.hasPermission('bid:complaint:list')">
+              <el-icon><Warning /></el-icon>
+              <template #title>质疑投诉</template>
+            </el-menu-item>
+            <el-menu-item index="/bid/contract" v-if="permissionStore.hasPermission('bid:contract:list')">
+              <el-icon><Notebook /></el-icon>
+              <template #title>合同管理</template>
+            </el-menu-item>
+          </el-sub-menu>
         </el-menu>
       </el-aside>
 
@@ -146,7 +181,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { Fold, Expand, House, Setting, User, UserFilled, Menu, OfficeBuilding, Key, Grid, Document, DataBoard, EditPen, Briefcase, Calendar, List, Stamp } from '@element-plus/icons-vue'
+import { Fold, Expand, House, Setting, User, UserFilled, Menu, OfficeBuilding, Key, Grid, Document, DataBoard, EditPen, Briefcase, Calendar, List, Stamp, Shop, Tickets, Star, Warning, Notebook } from '@element-plus/icons-vue'
 import { useThemeStore } from '@/store/theme'
 import { useUserStore } from '@/store/user'
 import { usePermissionStore } from '@/store/permission'

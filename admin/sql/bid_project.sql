@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS `bid_project` (
+    `id`                       BIGINT       NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+    `project_name`             VARCHAR(200) NOT NULL COMMENT '项目名称',
+    `purchase_type`            TINYINT      NOT NULL DEFAULT 1 COMMENT '采购类型: 1=货物 2=服务 3=工程',
+    `bid_method`               TINYINT      NOT NULL DEFAULT 1 COMMENT '招标方式: 1=公开招标 2=邀请招标 3=竞争性谈判 4=询价 5=单一来源',
+    `budget_amount`            DECIMAL(20, 2)        COMMENT '预算金额(万元)',
+    `funding_source`           VARCHAR(200)          COMMENT '资金来源',
+    `project_desc`             TEXT                  COMMENT '项目描述',
+    `announcement_start_time`  DATETIME              COMMENT '公告开始时间',
+    `registration_deadline`    DATETIME              COMMENT '报名截止时间',
+    `clarification_deadline`   DATETIME              COMMENT '答疑截止时间',
+    `bidding_deadline`         DATETIME              COMMENT '投标截止时间',
+    `evaluation_deadline`      DATETIME              COMMENT '评标预计完成时间',
+    `eval_method`              TINYINT               COMMENT '评标方法: 1=综合评分法 2=最低价法 3=两阶段评标',
+    `expert_count`             INT                   COMMENT '专家人数',
+    `expert_select_method`     TINYINT               COMMENT '专家抽取方式: 1=随机抽取 2=定向邀请',
+    `deposit_amount`           DECIMAL(20, 2)        COMMENT '保证金金额(万元)',
+    `announcement_content`     LONGTEXT              COMMENT '招标公告内容',
+    `status`                   TINYINT      NOT NULL DEFAULT 0 COMMENT '状态: 0=草稿 1=待审核 2=已发布 3=报名中 4=已截标 5=开标中 6=评标中 7=公示中 8=已定标 9=已归档 10=废标',
+    `creator_id`               BIGINT                COMMENT '创建人ID',
+    `creator_name`             VARCHAR(100)          COMMENT '创建人姓名',
+    `create_time`              DATETIME              COMMENT '创建时间',
+    `update_time`              DATETIME              COMMENT '更新时间',
+    `create_by`                VARCHAR(100)          COMMENT '创建人用户名',
+    `update_by`                VARCHAR(100)          COMMENT '更新人用户名',
+    `deleted`                  TINYINT      NOT NULL DEFAULT 0 COMMENT '逻辑删除: 0=未删除 1=已删除',
+    PRIMARY KEY (`id`),
+    KEY `idx_status` (`status`),
+    KEY `idx_creator_id` (`creator_id`),
+    KEY `idx_create_time` (`create_time`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COMMENT = '招标项目表';
